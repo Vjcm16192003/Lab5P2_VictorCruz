@@ -1121,7 +1121,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     }//GEN-LAST:event_JMI_CrearPreparadorActionPerformed
 
     private void JMI_CrearPsicologoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_CrearPsicologoActionPerformed
-       CrearPsicologos();
+        CrearPsicologos();
     }//GEN-LAST:event_JMI_CrearPsicologoActionPerformed
 
     private void JMI_ArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_ArbolActionPerformed
@@ -1133,7 +1133,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_SalirSistemaMouseClicked
 
     private void JMI_ModificarTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_ModificarTreeActionPerformed
-        
+
     }//GEN-LAST:event_JMI_ModificarTreeActionPerformed
 
     private void JMI_EliminarTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_EliminarTreeActionPerformed
@@ -1147,44 +1147,45 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     private void JB_AgregarJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarJugadoresMouseClicked
 
         DefaultListModel modelo
-        = (DefaultListModel) JL_Jugadores.getModel();
+                = (DefaultListModel) JL_Jugadores1.getModel();
         int num_jug = Integer.parseInt(JTF_NumJug.getText());
         int a_con = Integer.parseInt(JTF_AContratoJug.getText());
-        modelo.addElement(new Jugadores(num_jug,a_con,
+        modelo.addElement(new Jugadores(num_jug, a_con,
                 JTF_NombreJugador.getText(),
                 JTF_ApellidoJugador.getText(),
                 JTF_NacionalidadJug.getText(),
-                (Integer)JSP_EdadJugador.getValue()));
-        
-        Jugadores jug = new Jugadores(num_jug,a_con,
-                JTF_NombreJugador.getText(),
-                JTF_ApellidoJugador.getText(),
-                JTF_NacionalidadJug.getText(),
-                (Integer)JSP_EdadJugador.getValue());
-                Object[] newrow = {
-                    jug.getNum_jug(),
-                    jug.getContrato(),
-                    jug.getNombre(),
-                    jug.getApellido(),
-                    jug.getNacionalidad(),
-                    jug.getEdad()
+                (Integer) JSP_EdadJugador.getValue()));
 
-                };
-                DefaultTableModel modelo1
-                        = (DefaultTableModel) JT_Jugadores.getModel();
-                modelo1.addRow(newrow);
-                
-        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");        
+        Jugadores jug = new Jugadores(num_jug, a_con,
+                JTF_NombreJugador.getText(),
+                JTF_ApellidoJugador.getText(),
+                JTF_NacionalidadJug.getText(),
+                (Integer) JSP_EdadJugador.getValue());
+        Object[] newrow = {
+            jug.getNum_jug(),
+            jug.getContrato(),
+            jug.getNombre(),
+            jug.getApellido(),
+            jug.getNacionalidad(),
+            jug.getEdad()
+
+        };
+        DefaultTableModel modelo1
+                = (DefaultTableModel) JT_Jugadores.getModel();
+        modelo1.addRow(newrow);
+
+        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");
         JT_Jugadores.setModel(modelo1);
         JL_Jugadores.setModel(modelo);
-        JL_Jugadores.setModel(modelo);
-        
+        JL_Jugadores1.setModel(modelo);
+
         JTF_NumJug.setText("");
         JTF_AContratoJug.setText("");
         JL_Jugadores.setModel(modelo);
         JTF_NombreJugador.setText("");
         JTF_ApellidoJugador.setText("");
         JSP_EdadJugador.setValue(0);
+        JTF_NacionalidadJug.setText("");
     }//GEN-LAST:event_JB_AgregarJugadoresMouseClicked
 
     private void JB_AgregarJugadoresArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarJugadoresArbolMouseClicked
@@ -1193,37 +1194,37 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                 DefaultTreeModel modeloARBOL = (DefaultTreeModel) JTree_Equipo.getModel();
                 DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
                 //obtener la persona a guardar
-                DefaultListModel modeloLISTA = (DefaultListModel) JL_Jugadores.getModel();
+                DefaultListModel modeloLISTA = (DefaultListModel) JL_Jugadores1.getModel();
                 int num_jug;
                 int a_con;
                 String Nombre;
                 String Apellido;
                 int Edad;
                 String Nacio;
-                num_jug = ((Jugadores) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getNum_jug();
-                a_con = ((Jugadores) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getContrato();
-                Nombre = ((Jugadores) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getNombre();
-                Apellido = ((Jugadores) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getApellido();
-                Edad = ((Jugadores) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getEdad();
-                Nacio = ((Jugadores) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getNacionalidad();
+                num_jug = ((Jugadores) modeloLISTA.get(JL_Jugadores1.getSelectedIndex())).getNum_jug();
+                a_con = ((Jugadores) modeloLISTA.get(JL_Jugadores1.getSelectedIndex())).getContrato();
+                Nombre = ((Jugadores) modeloLISTA.get(JL_Jugadores1.getSelectedIndex())).getNombre();
+                Apellido = ((Jugadores) modeloLISTA.get(JL_Jugadores1.getSelectedIndex())).getApellido();
+                Edad = ((Jugadores) modeloLISTA.get(JL_Jugadores1.getSelectedIndex())).getEdad();
+                Nacio = ((Jugadores) modeloLISTA.get(JL_Jugadores1.getSelectedIndex())).getNacionalidad();
                 int centinela = -1;
                 for (int i = 0; i < raiz.getChildCount(); i++) {
                     if (raiz.getChildAt(i).toString().
-                        equals(Nombre)) {
+                            equals(Nombre)) {
                         //si ya existe le agrega la persona
                         DefaultMutableTreeNode p
-                        = new DefaultMutableTreeNode(
-                            new Jugadores(num_jug, a_con, Nombre, Apellido, Nacio, Edad));
+                                = new DefaultMutableTreeNode(
+                                        new Jugadores(num_jug, a_con, Nombre, Apellido, Nacio, Edad));
                         ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
                         centinela = 1;
                     }//fin del if
                 }//fin del for
                 if (centinela == -1) {
                     DefaultMutableTreeNode n
-                    = new DefaultMutableTreeNode("Jugadores");
+                            = new DefaultMutableTreeNode("Jugadores");
                     DefaultMutableTreeNode p
-                    = new DefaultMutableTreeNode(
-                        new Jugadores(num_jug, centinela, Nombre, Apellido, Nacio, Edad));
+                            = new DefaultMutableTreeNode(
+                                    new Jugadores(num_jug, a_con, Nombre, Apellido, Nacio, Edad));
                     n.add(p);
                     raiz.add(n);
                 }//fin del if
@@ -1231,7 +1232,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Se ha agregado al arbol");
             } else {
                 JOptionPane.showMessageDialog(this,
-                    "No hay persona seleccionada");
+                        "No hay persona seleccionada");
             }//fin del else
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error Inesperado");
@@ -1240,7 +1241,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_AgregarJugadoresArbolMouseClicked
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       Partido();
+        Partido();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void JTree_EquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTree_EquipoMouseClicked
@@ -1250,39 +1251,39 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
             norecibido = JTree_Equipo.getSelectionPath().getLastPathComponent();
             nodo_seleccionado = (DefaultMutableTreeNode) norecibido;
             popup_menu_Arbol.show(evt.getComponent(),
-                evt.getX(), evt.getY());
+                    evt.getX(), evt.getY());
         }
     }//GEN-LAST:event_JTree_EquipoMouseClicked
 
     private void JB_AgregarEntrenadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarEntrenadoresMouseClicked
-         DefaultListModel modelo
-        = (DefaultListModel) JL_Entrenadores.getModel();
+        DefaultListModel modelo
+                = (DefaultListModel) JL_Entrenadores.getModel();
         int cant_cop = Integer.parseInt(JTF_CantCop.getText());
         int a_con = Integer.parseInt(JTF_AContratoEntre.getText());
-        modelo.addElement(new Entrenadores(cant_cop,a_con,
+        modelo.addElement(new Entrenadores(cant_cop, a_con,
                 JTF_NombreEntrenador.getText(),
                 JTF_ApellidoEntrenador.getText(),
                 JTF_NacionalidadEntrenador.getText(),
-                (Integer)JSP_EdadEntrenador.getValue()));
-        
-        Entrenadores entre = new Entrenadores(cant_cop,a_con,
-                JTF_NombreEntrenador.getText(),
-                JTF_ApellidoEntrenador.getText(),
-                JTF_NacionalidadEntrenador.getText(),
-                (Integer)JSP_EdadEntrenador.getValue());
-                Object[] newrow = {
-                    entre.getCantidad_c(),
-                    entre.getContrato(),
-                    entre.getNombre(),
-                    entre.getApellido(),
-                    entre.getNacionalidad(),
-                    entre.getEdad()
+                (Integer) JSP_EdadEntrenador.getValue()));
 
-                };
-                DefaultTableModel modelo1
-                        = (DefaultTableModel) JT_Entrenadores.getModel();
-                modelo1.addRow(newrow);
-                
+        Entrenadores entre = new Entrenadores(cant_cop, a_con,
+                JTF_NombreEntrenador.getText(),
+                JTF_ApellidoEntrenador.getText(),
+                JTF_NacionalidadEntrenador.getText(),
+                (Integer) JSP_EdadEntrenador.getValue());
+        Object[] newrow = {
+            entre.getCantidad_c(),
+            entre.getContrato(),
+            entre.getNombre(),
+            entre.getApellido(),
+            entre.getNacionalidad(),
+            entre.getEdad()
+
+        };
+        DefaultTableModel modelo1
+                = (DefaultTableModel) JT_Entrenadores.getModel();
+        modelo1.addRow(newrow);
+
         JT_Entrenadores.setModel(modelo1);
         JL_Entrenadores.setModel(modelo);
         JL_Entrenadores1.setModel(modelo);
@@ -1292,43 +1293,90 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JTF_NombreEntrenador.setText("");
         JTF_ApellidoEntrenador.setText("");
         JSP_EdadEntrenador.setValue(0);
-        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente"); 
+        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");
     }//GEN-LAST:event_JB_AgregarEntrenadoresMouseClicked
 
     private void JB_AgregarEntrenadoresArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarEntrenadoresArbolMouseClicked
-        // TODO add your handling code here:
+        try {
+            if (JL_Entrenadores1.getSelectedIndex() >= 0) {
+                DefaultTreeModel modeloARBOL = (DefaultTreeModel) JTree_Equipo.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+                //obtener la persona a guardar
+                DefaultListModel modeloLISTA = (DefaultListModel) JL_Entrenadores1.getModel();
+                int cant_cop;
+                int a_con;
+                String Nombre;
+                String Apellido;
+                int Edad;
+                String Nacio;
+                cant_cop = ((Entrenadores) modeloLISTA.get(JL_Entrenadores1.getSelectedIndex())).getCantidad_c();
+                a_con = ((Entrenadores) modeloLISTA.get(JL_Entrenadores1.getSelectedIndex())).getContrato();
+                Nombre = ((Entrenadores) modeloLISTA.get(JL_Entrenadores1.getSelectedIndex())).getNombre();
+                Apellido = ((Entrenadores) modeloLISTA.get(JL_Entrenadores1.getSelectedIndex())).getApellido();
+                Edad = ((Entrenadores) modeloLISTA.get(JL_Entrenadores1.getSelectedIndex())).getEdad();
+                Nacio = ((Entrenadores) modeloLISTA.get(JL_Entrenadores1.getSelectedIndex())).getNacionalidad();
+                int centinela = -1;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (raiz.getChildAt(i).toString().
+                            equals(Nombre)) {
+                        //si ya existe le agrega la persona
+                        DefaultMutableTreeNode p
+                                = new DefaultMutableTreeNode(
+                                        new Entrenadores(cant_cop, a_con, Nombre, Apellido, Nacio, Edad));
+                        ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                        centinela = 1;
+                    }//fin del if
+                }//fin del for
+                if (centinela == -1) {
+                    DefaultMutableTreeNode n
+                            = new DefaultMutableTreeNode("Entrenadores");
+                    DefaultMutableTreeNode p
+                            = new DefaultMutableTreeNode(
+                                    new Entrenadores(cant_cop, a_con, Nombre, Apellido, Nacio, Edad));
+                    n.add(p);
+                    raiz.add(n);
+                }//fin del if
+                modeloARBOL.reload();
+                JOptionPane.showMessageDialog(this, "Se ha agregado al arbol");
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No hay persona seleccionada");
+            }//fin del else
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error Inesperado");
+        }//fin del try n catch
     }//GEN-LAST:event_JB_AgregarEntrenadoresArbolMouseClicked
 
     private void JB_AgregarPreparadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarPreparadorMouseClicked
         DefaultListModel modelo
-        = (DefaultListModel) JL_Preparadores.getModel();
+                = (DefaultListModel) JL_Preparadores.getModel();
         int a_con = Integer.parseInt(JTF_AContratoPrep.getText());
-        modelo.addElement(new Preparador(JTF_IDPrep.getText(),JTF_EspecialidadPrep.getText(),JTF_TituloPrep.getText(),a_con,
+        modelo.addElement(new Preparador(JTF_IDPrep.getText(), JTF_EspecialidadPrep.getText(), JTF_TituloPrep.getText(), a_con,
                 JTF_NombrePrep.getText(),
                 JTF_ApellidoPrep.getText(),
                 JTF_NacionalidadPrep.getText(),
-                (Integer)JSP_EdadPrep.getValue()));
-        
-        Preparador prep = new Preparador(JTF_IDPrep.getText(),JTF_EspecialidadPrep.getText(),JTF_TituloPrep.getText(),a_con,
-                JTF_NombrePrep.getText(),
-                JTF_ApellidoPrep.getText(),
-                JTF_NacionalidadPrep.getText(),
-                (Integer)JSP_EdadPrep.getValue());
-                Object[] newrow = {
-                    prep.getID(),
-                    prep.getContrato(),
-                    prep.getNombre(),
-                    prep.getApellido(),
-                    prep.getNacionalidad(),
-                    prep.getEdad(),
-                    prep.getEspecialidad(),
-                    prep.getTitulo()
+                (Integer) JSP_EdadPrep.getValue()));
 
-                };
-                DefaultTableModel modelo1
-                        = (DefaultTableModel) JT_Preparador.getModel();
-                modelo1.addRow(newrow);
-                
+        Preparador prep = new Preparador(JTF_IDPrep.getText(), JTF_EspecialidadPrep.getText(), JTF_TituloPrep.getText(), a_con,
+                JTF_NombrePrep.getText(),
+                JTF_ApellidoPrep.getText(),
+                JTF_NacionalidadPrep.getText(),
+                (Integer) JSP_EdadPrep.getValue());
+        Object[] newrow = {
+            prep.getID(),
+            prep.getContrato(),
+            prep.getNombre(),
+            prep.getApellido(),
+            prep.getNacionalidad(),
+            prep.getEdad(),
+            prep.getEspecialidad(),
+            prep.getTitulo()
+
+        };
+        DefaultTableModel modelo1
+                = (DefaultTableModel) JT_Preparador.getModel();
+        modelo1.addRow(newrow);
+
         JT_Preparador.setModel(modelo1);
         JL_Preparadores.setModel(modelo);
         JL_Preparadores1.setModel(modelo);
@@ -1340,42 +1388,93 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JTF_NacionalidadPrep.setText("");
         JTF_EspecialidadPrep.setText("");
         JTF_TituloPrep.setText("");
-        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente"); 
-        
+        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");
+
     }//GEN-LAST:event_JB_AgregarPreparadorMouseClicked
 
     private void JB_AgregarPrepArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarPrepArbolMouseClicked
-        // TODO add your handling code here:
+        try {
+            if (JL_Preparadores1.getSelectedIndex() >= 0) {
+                DefaultTreeModel modeloARBOL = (DefaultTreeModel) JTree_Equipo.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+                //obtener la persona a guardar
+                DefaultListModel modeloLISTA = (DefaultListModel) JL_Preparadores1.getModel();
+                String id;
+                int a_con;
+                String Nombre;
+                String Apellido;
+                int Edad;
+                String Nacio;
+                String esp;
+                String tit;
+                id = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getID();
+                a_con = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getContrato();
+                Nombre = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getNombre();
+                Apellido = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getApellido();
+                Edad = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getEdad();
+                Nacio = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getNacionalidad();
+                 esp = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getEspecialidad();
+                tit = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getTitulo();
+                int centinela = -1;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (raiz.getChildAt(i).toString().
+                            equals(Nombre)) {
+                        //si ya existe le agrega la persona
+                        DefaultMutableTreeNode p
+                                = new DefaultMutableTreeNode(
+                                        new Preparador(id, esp, tit, a_con, Nombre, Apellido, Nacio, Edad));
+                        ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                        centinela = 1;
+                    }//fin del if
+                }//fin del for
+                if (centinela == -1) {
+                    DefaultMutableTreeNode n
+                            = new DefaultMutableTreeNode("Preparadores");
+                    DefaultMutableTreeNode p
+                            = new DefaultMutableTreeNode(
+                                    new Preparador(id, esp, tit, a_con, Nombre, Apellido, Nacio, Edad));
+                    n.add(p);
+                    raiz.add(n);
+                }//fin del if
+                modeloARBOL.reload();
+                JOptionPane.showMessageDialog(this, "Se ha agregado al arbol");
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No hay persona seleccionada");
+            }//fin del else
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error Inesperado");
+        }//fin del try n catch
     }//GEN-LAST:event_JB_AgregarPrepArbolMouseClicked
 
     private void JB_AgregarPsicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarPsicoMouseClicked
         DefaultListModel modelo
-        = (DefaultListModel) JL_Psicologo.getModel();
-        modelo.addElement(new Psicologo(JTF_IDPsicologo.getText(),JTF_EspecialidadPsico.getText(),JTF_TituloPsico.getText(),
+                = (DefaultListModel) JL_Psicologo.getModel();
+        modelo.addElement(new Psicologo(JTF_IDPsicologo.getText(), JTF_EspecialidadPsico.getText(), JTF_TituloPsico.getText(),
                 JTF_NombrePsico.getText(),
                 JTF_ApellidoPsico.getText(),
                 JTF_NacionalidadPsico.getText(),
-                (Integer)JSP_EdadPsico.getValue()));
-        
-        Psicologo psico = new Psicologo(JTF_IDPsicologo.getText(),JTF_EspecialidadPsico.getText(),JTF_TituloPsico.getText(),
-                JTF_NombrePsico.getText(),
-                JTF_ApellidoPsico.getText(),
-                JTF_NacionalidadPsico.getText(),
-                (Integer)JSP_EdadPsico.getValue());
-                Object[] newrow = {
-                    psico.getID(),
-                    psico.getNombre(),
-                    psico.getApellido(),
-                    psico.getNacionalidad(),
-                    psico.getEdad(),
-                    psico.getEspecialidad(),
-                    psico.getTitulo()
+                (Integer) JSP_EdadPsico.getValue()));
 
-                };
-                DefaultTableModel modelo1
-                        = (DefaultTableModel) JT_Psicologo.getModel();
-                modelo1.addRow(newrow);
-                
+        Psicologo psico = new Psicologo(JTF_IDPsicologo.getText(), JTF_EspecialidadPsico.getText(), JTF_TituloPsico.getText(),
+                JTF_NombrePsico.getText(),
+                JTF_ApellidoPsico.getText(),
+                JTF_NacionalidadPsico.getText(),
+                (Integer) JSP_EdadPsico.getValue());
+        Object[] newrow = {
+            psico.getID(),
+            psico.getNombre(),
+            psico.getApellido(),
+            psico.getNacionalidad(),
+            psico.getEdad(),
+            psico.getEspecialidad(),
+            psico.getTitulo()
+
+        };
+        DefaultTableModel modelo1
+                = (DefaultTableModel) JT_Psicologo.getModel();
+        modelo1.addRow(newrow);
+
         JT_Psicologo.setModel(modelo1);
         JL_Psicologo.setModel(modelo);
         JL_Psicologo.setModel(modelo);
@@ -1386,11 +1485,60 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JTF_TituloPsico.setText("");
         JTF_EspecialidadPsico.setText("");
         JSP_EdadPsico.setValue(0);
-        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente"); 
+        JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");
     }//GEN-LAST:event_JB_AgregarPsicoMouseClicked
 
     private void JB_AgregarPsicoArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarPsicoArbolMouseClicked
-        // TODO add your handling code here:
+        try {
+            if (JL_Psicologo1.getSelectedIndex() >= 0) {
+                DefaultTreeModel modeloARBOL = (DefaultTreeModel) JTree_Equipo.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+                //obtener la persona a guardar
+                DefaultListModel modeloLISTA = (DefaultListModel) JL_Psicologo1.getModel();
+                String id;
+                String Nombre;
+                String Apellido;
+                int Edad;
+                String Nacio;
+                String esp;
+                String tit;
+                id = ((Preparador) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getID();
+                Nombre = ((Preparador) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getNombre();
+                Apellido = ((Preparador) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getApellido();
+                Edad = ((Preparador) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getEdad();
+                Nacio = ((Preparador) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getNacionalidad();
+                 esp = ((Preparador) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getEspecialidad();
+                tit = ((Preparador) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getTitulo();
+                int centinela = -1;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (raiz.getChildAt(i).toString().
+                            equals(Nombre)) {
+                        //si ya existe le agrega la persona
+                        DefaultMutableTreeNode p
+                                = new DefaultMutableTreeNode(
+                                        new Psicologo(tit, id, esp, Nombre, Apellido, Nacio, Edad));
+                        ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                        centinela = 1;
+                    }//fin del if
+                }//fin del for
+                if (centinela == -1) {
+                    DefaultMutableTreeNode n
+                            = new DefaultMutableTreeNode("Psicologo");
+                    DefaultMutableTreeNode p
+                            = new DefaultMutableTreeNode(
+                                    new  Psicologo(tit, id, esp, Nombre, Apellido, Nacio, Edad));
+                    n.add(p);
+                    raiz.add(n);
+                }//fin del if
+                modeloARBOL.reload();
+                JOptionPane.showMessageDialog(this, "Se ha agregado al arbol");
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No hay persona seleccionada");
+            }//fin del else
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error Inesperado");
+        }//fin del try n catch
     }//GEN-LAST:event_JB_AgregarPsicoArbolMouseClicked
 
     public void CrearJugador() {
@@ -1399,72 +1547,70 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JD_CrearJugugador.setLocationRelativeTo(this);
         JD_CrearJugugador.setVisible(true);
     }//fin del JDialog
-    
-     public void CrearEntrenador() {
+
+    public void CrearEntrenador() {
         JD_CrearEntrenador.pack();
         JD_CrearEntrenador.setModal(true);
         JD_CrearEntrenador.setLocationRelativeTo(this);
         JD_CrearEntrenador.setVisible(true);
     }//fin del JDialog
-     
-      public void CrearPreparadores() {
+
+    public void CrearPreparadores() {
         JD_CrearPreparador.pack();
         JD_CrearPreparador.setModal(true);
         JD_CrearPreparador.setLocationRelativeTo(this);
         JD_CrearPreparador.setVisible(true);
     }//fin del JDialog
-      
-      public void CrearPsicologos() {
+
+    public void CrearPsicologos() {
         JD_CrearPsicologo.pack();
         JD_CrearPsicologo.setModal(true);
         JD_CrearPsicologo.setLocationRelativeTo(this);
         JD_CrearPsicologo.setVisible(true);
     }//fin del JDialog
-      
-       public void Arbol() {
+
+    public void Arbol() {
         JD_Arbol.pack();
         JD_Arbol.setModal(true);
         JD_Arbol.setLocationRelativeTo(this);
         JD_Arbol.setVisible(true);
     }//fin del JDialog
-       
-       public void TablaJugadores() {
+
+    public void TablaJugadores() {
         JD_VerTablaJugadores.pack();
         JD_VerTablaJugadores.setModal(true);
         JD_VerTablaJugadores.setLocationRelativeTo(this);
         JD_VerTablaJugadores.setVisible(true);
     }//fin del JDialog
-       
-       public void TablaEntrenadores() {
+
+    public void TablaEntrenadores() {
         JD_VerTablaEntrenadores.pack();
         JD_VerTablaEntrenadores.setModal(true);
         JD_VerTablaEntrenadores.setLocationRelativeTo(this);
         JD_VerTablaEntrenadores.setVisible(true);
     }//fin del JDialog
-       
-        public void TablaPreparador() {
+
+    public void TablaPreparador() {
         JD_VerTablaPreparador.pack();
         JD_VerTablaPreparador.setModal(true);
         JD_VerTablaPreparador.setLocationRelativeTo(this);
         JD_VerTablaPreparador.setVisible(true);
     }//fin del JDialog
-        
-         public void TablaPsicologo() {
+
+    public void TablaPsicologo() {
         JD_VerTablaPsicologo.pack();
         JD_VerTablaPreparador.setModal(true);
         JD_VerTablaPreparador.setLocationRelativeTo(this);
         JD_VerTablaPreparador.setVisible(true);
     }//fin del JDialog
-         
-          public void Partido() {
+
+    public void Partido() {
         JD_Partido.pack();
         JD_Partido.setModal(true);
         JD_Partido.setLocationRelativeTo(this);
         JD_Partido.setVisible(true);
     }//fin del JDialog
-         
-    
-    
+
     /**
      * @param args the command line arguments
      */
