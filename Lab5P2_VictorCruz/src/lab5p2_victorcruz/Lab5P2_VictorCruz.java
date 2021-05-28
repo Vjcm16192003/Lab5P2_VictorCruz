@@ -5,7 +5,12 @@
  */
 package lab5p2_victorcruz;
 
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -33,28 +38,28 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JD_CrearJugugador = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        JTF_NombreEstudiante = new javax.swing.JTextField();
+        JTF_NombreJugador = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        JTF_ApellidoEst = new javax.swing.JTextField();
+        JTF_ApellidoJugador = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        JB_AgregarEstudiante = new javax.swing.JButton();
-        JB_AgregarEstudiantesArbol = new javax.swing.JButton();
-        JSP_EdadEst = new javax.swing.JSpinner();
-        CB_GeneroEst = new javax.swing.JComboBox<>();
+        JB_AgregarJugadores = new javax.swing.JButton();
+        JB_AgregarJugadoresArbol = new javax.swing.JButton();
+        JSP_EdadJugador = new javax.swing.JSpinner();
         jScrollPane2 = new javax.swing.JScrollPane();
-        JL_estudiantes = new javax.swing.JList();
-        CB_Carreras = new javax.swing.JComboBox<>();
+        JL_Jugadores = new javax.swing.JList();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        JTF_UsernameEst = new javax.swing.JTextField();
-        JTF_PasswordEst = new javax.swing.JTextField();
+        JTF_NumJug = new javax.swing.JTextField();
+        JTF_AContratoJug = new javax.swing.JTextField();
+        JTF_Nacionalidad = new javax.swing.JTextField();
         JD_CrearEntrenador = new javax.swing.JDialog();
         JD_CrearPreparador = new javax.swing.JDialog();
         JD_CrearPsicologo = new javax.swing.JDialog();
         JD_Arbol = new javax.swing.JDialog();
         JD_VerTablaJugadores = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        JT_Jugadores = new javax.swing.JTable();
         JD_VerTablaEntrenadores = new javax.swing.JDialog();
         JD_VerTablaPreparador = new javax.swing.JDialog();
         JD_VerTablaPsicologo = new javax.swing.JDialog();
@@ -71,63 +76,57 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JMI_CrearEntrenador = new javax.swing.JMenuItem();
         JMI_CrearPreparador = new javax.swing.JMenuItem();
         JMI_CrearPsicologo = new javax.swing.JMenuItem();
-        JMI_CrearPartido = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         JMI_Arbol = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
-        jLabel4.setText("Ingrese su nombre:");
+        jLabel4.setText("Ingrese  nombre del Jugador:");
 
-        jLabel5.setText("Ingrese su apellido:");
+        jLabel5.setText("Ingrese  apellido del Jugador:");
 
         jLabel6.setText("Ingrese su edad:");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("Genero:");
+        jLabel7.setText("Nacionalidad");
 
-        jLabel8.setText("Ingrese su carrera:");
-
-        JB_AgregarEstudiante.setText("Agregar a la lista");
-        JB_AgregarEstudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+        JB_AgregarJugadores.setText("Agregar a la lista");
+        JB_AgregarJugadores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JB_AgregarEstudianteMouseClicked(evt);
+                JB_AgregarJugadoresMouseClicked(evt);
             }
         });
 
-        JB_AgregarEstudiantesArbol.setText("Agregar al arbol");
-        JB_AgregarEstudiantesArbol.setEnabled(false);
-        JB_AgregarEstudiantesArbol.addMouseListener(new java.awt.event.MouseAdapter() {
+        JB_AgregarJugadoresArbol.setText("Agregar al arbol");
+        JB_AgregarJugadoresArbol.setEnabled(false);
+        JB_AgregarJugadoresArbol.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JB_AgregarEstudiantesArbolMouseClicked(evt);
+                JB_AgregarJugadoresArbolMouseClicked(evt);
             }
         });
-        JB_AgregarEstudiantesArbol.addActionListener(new java.awt.event.ActionListener() {
+        JB_AgregarJugadoresArbol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JB_AgregarEstudiantesArbolActionPerformed(evt);
+                JB_AgregarJugadoresArbolActionPerformed(evt);
             }
         });
 
-        JSP_EdadEst.setValue(20);
+        JSP_EdadJugador.setValue(20);
 
-        CB_GeneroEst.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
-
-        JL_estudiantes.setModel(new DefaultListModel());
-        JL_estudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
+        JL_Jugadores.setModel(new DefaultListModel());
+        JL_Jugadores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JL_estudiantesMouseClicked(evt);
+                JL_JugadoresMouseClicked(evt);
             }
         });
-        JL_estudiantes.addKeyListener(new java.awt.event.KeyAdapter() {
+        JL_Jugadores.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                JL_estudiantesKeyPressed(evt);
+                JL_JugadoresKeyPressed(evt);
             }
         });
-        jScrollPane2.setViewportView(JL_estudiantes);
+        jScrollPane2.setViewportView(JL_Jugadores);
 
-        CB_Carreras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Finanzas", " Derecho", "Administración de Empresas", "Diseño Gráfico", "Mercadotecnia", "Sistemas Computacionales", "Industrial y de Sistemas", "Mecatrónica", "Biomédica", "Energía", "Medicina y Cirugía", "Odontología", "Nutrición y Terapia Física", "Ocupacional" }));
+        jLabel16.setText("Años de Contrato");
 
-        jLabel16.setText("Ingrese su password:");
-
-        jLabel17.setText("Ingrese su username:");
+        jLabel17.setText("Numero de Jugador");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,29 +142,24 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(50, 50, 50)
-                                        .addComponent(jLabel7))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel8)))
+                                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
                                 .addGap(85, 85, 85)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CB_GeneroEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CB_Carreras, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JSP_EdadEst, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JTF_ApellidoEst, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JTF_NombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JTF_PasswordEst, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JTF_UsernameEst, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(JSP_EdadJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JTF_ApellidoJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JTF_NombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JTF_AContratoJug, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JTF_NumJug, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JTF_Nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 789, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(180, 180, 180)
-                        .addComponent(JB_AgregarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JB_AgregarJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(72, 72, 72)
-                        .addComponent(JB_AgregarEstudiantesArbol, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(JB_AgregarJugadoresArbol, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -174,42 +168,31 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(JTF_UsernameEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTF_NumJug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(JTF_PasswordEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTF_AContratoJug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTF_NombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JTF_NombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JTF_ApellidoJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JSP_EdadJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(64, 64, 64))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(JTF_ApellidoEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(JSP_EdadEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(CB_GeneroEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 79, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(JB_AgregarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JB_AgregarEstudiantesArbol, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(CB_Carreras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(JTF_Nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_AgregarJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JB_AgregarJugadoresArbol, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
@@ -271,15 +254,46 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        JT_Jugadores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Numero de Jugador", "Años de Contrato", "Nombre", "Apellido", "Nacionalidad", "Edad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(JT_Jugadores);
+
         javax.swing.GroupLayout JD_VerTablaJugadoresLayout = new javax.swing.GroupLayout(JD_VerTablaJugadores.getContentPane());
         JD_VerTablaJugadores.getContentPane().setLayout(JD_VerTablaJugadoresLayout);
         JD_VerTablaJugadoresLayout.setHorizontalGroup(
             JD_VerTablaJugadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(JD_VerTablaJugadoresLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         JD_VerTablaJugadoresLayout.setVerticalGroup(
             JD_VerTablaJugadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(JD_VerTablaJugadoresLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JD_VerTablaEntrenadoresLayout = new javax.swing.GroupLayout(JD_VerTablaEntrenadores.getContentPane());
@@ -399,14 +413,6 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         });
         jMenu1.add(JMI_CrearPsicologo);
 
-        JMI_CrearPartido.setText("Crear Partido");
-        JMI_CrearPartido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMI_CrearPartidoActionPerformed(evt);
-            }
-        });
-        jMenu1.add(JMI_CrearPartido);
-
         JMB_Menu.add(jMenu1);
 
         jMenu2.setText("Ver Arbol");
@@ -420,6 +426,18 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         jMenu2.add(JMI_Arbol);
 
         JMB_Menu.add(jMenu2);
+
+        jMenu3.setText("Info partidos");
+
+        jMenuItem1.setText("ver Partidos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        JMB_Menu.add(jMenu3);
 
         setJMenuBar(JMB_Menu);
 
@@ -477,52 +495,61 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JMI_ListarTreeActionPerformed
 
-    private void JMI_CrearPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_CrearPartidoActionPerformed
-       Partido();
-    }//GEN-LAST:event_JMI_CrearPartidoActionPerformed
-
-    private void JB_AgregarEstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarEstudianteMouseClicked
+    private void JB_AgregarJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarJugadoresMouseClicked
 
         DefaultListModel modelo
-        = (DefaultListModel) JL_estudiantes.getModel();
-        modelo.addElement(new Estudiantes(NumCuenta,
-            (String) CB_Carreras.getSelectedItem(),
-            JTF_NombreEstudiante.getText(),
-            JTF_ApellidoEst.getText(),
-            (String) CB_GeneroEst.getSelectedItem(),
-            (Integer) JSP_EdadEst.getValue()
-        )
-        );
-        p.add(new Estudiantes(NumCuenta, (String) CB_Carreras.getSelectedItem(), JTF_UsernameEst.getText(), JTF_PasswordEst.getText(), JTF_NombreEstudiante.getText(), JTF_ApellidoEst.getText(), (String) CB_GeneroEst.getSelectedItem(), (Integer) JSP_EdadEst.getValue()));
-        JTF_UsernameEst.setText("");
-        JTF_PasswordEst.setText("");
-        JL_estudiantes.setModel(modelo);
-        JTF_NombreEstudiante.setText("");
-        CB_Carreras.setSelectedIndex(0);
-        JTF_ApellidoEst.setText("");
-        JSP_EdadEst.setValue(0);
-        CB_GeneroEst.setSelectedIndex(0);
-    }//GEN-LAST:event_JB_AgregarEstudianteMouseClicked
+        = (DefaultListModel) JL_Jugadores.getModel();
+        int num_jug = Integer.parseInt(JTF_NumJug.getText());
+        int a_con = Integer.parseInt(JTF_AContratoJug.getText());
+        modelo.addElement(new Jugadores(num_jug,a_con,
+                JTF_NombreJugador.getText(),
+                JTF_ApellidoJugador.getText(),
+                JTF_Nacionalidad.getText(),
+                (Integer)JSP_EdadJugador.getValue()));
+        
+        Jugadores jug = new Jugadores();
+                Object[] newrow = {
+                    jug.getNum_jug(),
+                    jug.getContrato(),
+                    jug.getNombre(),
+                    jug.getApellido(),
+                    jug.getNacionalidad(),
+                    jug.getEdad()
 
-    private void JB_AgregarEstudiantesArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarEstudiantesArbolMouseClicked
+                };
+                DefaultTableModel modelo1
+                        = (DefaultTableModel) JT_Jugadores.getModel();
+                modelo1.addRow(newrow);
+                
+        JT_Jugadores.setModel(modelo1);
+        JL_Jugadores.setModel(modelo);
+        JTF_NumJug.setText("");
+        JTF_AContratoJug.setText("");
+        JL_Jugadores.setModel(modelo);
+        JTF_NombreJugador.setText("");
+        JTF_ApellidoJugador.setText("");
+        JSP_EdadJugador.setValue(0);
+    }//GEN-LAST:event_JB_AgregarJugadoresMouseClicked
+
+    private void JB_AgregarJugadoresArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarJugadoresArbolMouseClicked
         try {
-            if (JL_estudiantes.getSelectedIndex() >= 0) {
+            if (JL_Jugadores.getSelectedIndex() >= 0) {
                 DefaultTreeModel modeloARBOL = (DefaultTreeModel) JT_Universidad.getModel();
                 DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
                 //obtener la persona a guardar
-                DefaultListModel modeloLISTA = (DefaultListModel) JL_estudiantes.getModel();
+                DefaultListModel modeloLISTA = (DefaultListModel) JL_Jugadores.getModel();
                 int Numero_Cuenta;
                 String Carrera;
                 String Nombre;
                 String Apellido;
                 int Edad;
                 String Genero;
-                Numero_Cuenta = ((Estudiantes) modeloLISTA.get(JL_estudiantes.getSelectedIndex())).getNumero_Cuenta();
-                Carrera = ((Estudiantes) modeloLISTA.get(JL_estudiantes.getSelectedIndex())).getCarrera();
-                Nombre = ((Estudiantes) modeloLISTA.get(JL_estudiantes.getSelectedIndex())).getNombre();
-                Apellido = ((Estudiantes) modeloLISTA.get(JL_estudiantes.getSelectedIndex())).getApellido();
-                Edad = ((Estudiantes) modeloLISTA.get(JL_estudiantes.getSelectedIndex())).getEdad();
-                Genero = ((Estudiantes) modeloLISTA.get(JL_estudiantes.getSelectedIndex())).getGenero();
+                Numero_Cuenta = ((Estudiantes) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getNumero_Cuenta();
+                Carrera = ((Estudiantes) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getCarrera();
+                Nombre = ((Estudiantes) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getNombre();
+                Apellido = ((Estudiantes) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getApellido();
+                Edad = ((Estudiantes) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getEdad();
+                Genero = ((Estudiantes) modeloLISTA.get(JL_Jugadores.getSelectedIndex())).getGenero();
                 int centinela = -1;
                 for (int i = 0; i < raiz.getChildCount(); i++) {
                     if (raiz.getChildAt(i).toString().
@@ -554,41 +581,33 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error Inesperado");
         }//fin del try n catch
 
-    }//GEN-LAST:event_JB_AgregarEstudiantesArbolMouseClicked
+    }//GEN-LAST:event_JB_AgregarJugadoresArbolMouseClicked
 
-    private void JB_AgregarEstudiantesArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AgregarEstudiantesArbolActionPerformed
+    private void JB_AgregarJugadoresArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AgregarJugadoresArbolActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JB_AgregarEstudiantesArbolActionPerformed
+    }//GEN-LAST:event_JB_AgregarJugadoresArbolActionPerformed
 
-    private void JL_estudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JL_estudiantesMouseClicked
-        String user = JTF_Username.getText();
-        String Pass = JPF_Password.getText();
-        if (user.equalsIgnoreCase("vjcm1821") && Pass.equalsIgnoreCase("1234")) {
-            if (JL_estudiantes.getSelectedIndex() >= 0) {
-                if (evt.isMetaDown()) {
-                    popup_modificar.show(evt.getComponent(),
-                        evt.getX(), evt.getY());
+    private void JL_JugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JL_JugadoresMouseClicked
+           
+    }//GEN-LAST:event_JL_JugadoresMouseClicked
 
-                }//fin de la condicion del click derecho
-            }//fin de la condicion del popip_menu
-        } else {
-            JOptionPane.showMessageDialog(this, "Debe ser Admin para Modificar");
-        }
-    }//GEN-LAST:event_JL_estudiantesMouseClicked
-
-    private void JL_estudiantesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JL_estudiantesKeyPressed
+    private void JL_JugadoresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JL_JugadoresKeyPressed
         if (evt.getKeyCode() == evt.VK_DELETE) {
-            if (JL_estudiantes.getSelectedIndex() >= 0) {
+            if (JL_Jugadores.getSelectedIndex() >= 0) {
                 DefaultListModel modelo
-                = (DefaultListModel) JL_estudiantes.getModel();
-                modelo.remove(JL_estudiantes.getSelectedIndex());
-                JL_estudiantes.setModel(modelo);
+                = (DefaultListModel) JL_Jugadores.getModel();
+                modelo.remove(JL_Jugadores.getSelectedIndex());
+                JL_Jugadores.setModel(modelo);
                 JOptionPane.showMessageDialog(this,
                     "Eliminado exitosamente");
 
             }
         }
-    }//GEN-LAST:event_JL_estudiantesKeyPressed
+    }//GEN-LAST:event_JL_JugadoresKeyPressed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       Partido();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     public void CrearJugador() {
         JD_CrearJugugador.pack();
@@ -698,10 +717,8 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CB_Carreras;
-    private javax.swing.JComboBox<String> CB_GeneroEst;
-    private javax.swing.JButton JB_AgregarEstudiante;
-    private javax.swing.JButton JB_AgregarEstudiantesArbol;
+    private javax.swing.JButton JB_AgregarJugadores;
+    private javax.swing.JButton JB_AgregarJugadoresArbol;
     private javax.swing.JButton JB_SalirSistema;
     private javax.swing.JDialog JD_Arbol;
     private javax.swing.JDialog JD_CrearEntrenador;
@@ -713,34 +730,38 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     private javax.swing.JDialog JD_VerTablaJugadores;
     private javax.swing.JDialog JD_VerTablaPreparador;
     private javax.swing.JDialog JD_VerTablaPsicologo;
-    private javax.swing.JList JL_estudiantes;
+    private javax.swing.JList JL_Jugadores;
     private javax.swing.JMenuBar JMB_Menu;
     private javax.swing.JMenuItem JMI_Arbol;
     private javax.swing.JMenuItem JMI_CrearEntrenador;
     private javax.swing.JMenuItem JMI_CrearJugador;
-    private javax.swing.JMenuItem JMI_CrearPartido;
     private javax.swing.JMenuItem JMI_CrearPreparador;
     private javax.swing.JMenuItem JMI_CrearPsicologo;
     private javax.swing.JMenuItem JMI_EliminarTree;
     private javax.swing.JMenuItem JMI_ListarTree;
     private javax.swing.JMenuItem JMI_ModificarTree;
-    private javax.swing.JSpinner JSP_EdadEst;
-    private javax.swing.JTextField JTF_ApellidoEst;
-    private javax.swing.JTextField JTF_NombreEstudiante;
-    private javax.swing.JTextField JTF_PasswordEst;
-    private javax.swing.JTextField JTF_UsernameEst;
+    private javax.swing.JSpinner JSP_EdadJugador;
+    private javax.swing.JTextField JTF_AContratoJug;
+    private javax.swing.JTextField JTF_ApellidoJugador;
+    private javax.swing.JTextField JTF_Nacionalidad;
+    private javax.swing.JTextField JTF_NombreJugador;
+    private javax.swing.JTextField JTF_NumJug;
+    private javax.swing.JTable JT_Jugadores;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPopupMenu popup_menu_Arbol;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Integrantes> integrantes = new ArrayList();
 }
