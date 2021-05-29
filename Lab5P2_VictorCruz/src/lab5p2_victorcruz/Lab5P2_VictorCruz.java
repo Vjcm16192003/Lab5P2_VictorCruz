@@ -163,8 +163,6 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JMI_CrearPsicologo = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         JMI_Arbol = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
 
         jLabel4.setText("Ingrese  nombre del Jugador:");
 
@@ -524,9 +522,9 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
             .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jLabel28.setText("Ingrese  nombre del Preparador:");
+        jLabel28.setText("Ingrese  nombre del Psicologo:");
 
-        jLabel29.setText("Ingrese  apellido del Preparador:");
+        jLabel29.setText("Ingrese  apellido del Psicologo:");
 
         jLabel30.setText("Ingrese su edad:");
 
@@ -1106,18 +1104,6 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
 
         JMB_Menu.add(jMenu2);
 
-        jMenu3.setText("Info partidos");
-
-        jMenuItem1.setText("ver Partidos");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem1);
-
-        JMB_Menu.add(jMenu3);
-
         setJMenuBar(JMB_Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1169,7 +1155,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                 "Confirm",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
-        
+
         if (reply == JOptionPane.OK_OPTION) {
             DefaultTreeModel m
                     = (DefaultTreeModel) JTree_Equipo.getModel();
@@ -1180,13 +1166,13 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     }//GEN-LAST:event_JMI_EliminarTreeActionPerformed
 
     private void JMI_ListarTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_ListarTreeActionPerformed
-       if (nodo_seleccionado.getUserObject() instanceof Jugadores) {
+        if (nodo_seleccionado.getUserObject() instanceof Jugadores) {
             DefaultTreeModel m = (DefaultTreeModel) JTree_Equipo.getModel();
             TablaJugadores();
             m.reload();
         } else if (nodo_seleccionado.getUserObject() instanceof Entrenadores) {
             DefaultTreeModel m = (DefaultTreeModel) JTree_Equipo.getModel();
-           TablaEntrenadores();
+            TablaEntrenadores();
             m.reload();
         } else if (nodo_seleccionado.getUserObject() instanceof Preparador) {
             DefaultTreeModel m = (DefaultTreeModel) JTree_Equipo.getModel();
@@ -1196,7 +1182,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
             DefaultTreeModel m = (DefaultTreeModel) JTree_Equipo.getModel();
             TablaPsicologo();
             m.reload();
-            
+
         }//fin de la condiciones
     }//GEN-LAST:event_JMI_ListarTreeActionPerformed
 
@@ -1242,7 +1228,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JTF_ApellidoJugador.setText("");
         JSP_EdadJugador.setValue(0);
         JTF_NacionalidadJug.setText("");
-         JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
+        JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
     }//GEN-LAST:event_JB_AgregarJugadoresMouseClicked
 
     private void JB_AgregarJugadoresArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarJugadoresArbolMouseClicked
@@ -1297,10 +1283,6 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
 
     }//GEN-LAST:event_JB_AgregarJugadoresArbolMouseClicked
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Partido();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void JTree_EquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTree_EquipoMouseClicked
         // TODO add your handling code here:
         if (evt.isMetaDown()) {
@@ -1351,7 +1333,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JTF_ApellidoEntrenador.setText("");
         JSP_EdadEntrenador.setValue(0);
         JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");
-         JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
+        JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
     }//GEN-LAST:event_JB_AgregarEntrenadoresMouseClicked
 
     private void JB_AgregarEntrenadoresArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarEntrenadoresArbolMouseClicked
@@ -1447,7 +1429,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JTF_EspecialidadPrep.setText("");
         JTF_TituloPrep.setText("");
         JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");
-         JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
+        JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
 
     }//GEN-LAST:event_JB_AgregarPreparadorMouseClicked
 
@@ -1472,7 +1454,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                 Apellido = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getApellido();
                 Edad = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getEdad();
                 Nacio = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getNacionalidad();
-                 esp = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getEspecialidad();
+                esp = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getEspecialidad();
                 tit = ((Preparador) modeloLISTA.get(JL_Preparadores1.getSelectedIndex())).getTitulo();
                 int centinela = -1;
                 for (int i = 0; i < raiz.getChildCount(); i++) {
@@ -1545,7 +1527,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
         JTF_EspecialidadPsico.setText("");
         JSP_EdadPsico.setValue(0);
         JOptionPane.showMessageDialog(this, "Se ha agregado Correctamente");
-         JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
+        JOptionPane.showMessageDialog(this, "Recuerde Seleccionar el indice en el Jlist Para Agregar al Arbol");
     }//GEN-LAST:event_JB_AgregarPsicoMouseClicked
 
     private void JB_AgregarPsicoArbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarPsicoArbolMouseClicked
@@ -1567,7 +1549,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                 Apellido = ((Psicologo) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getApellido();
                 Edad = ((Psicologo) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getEdad();
                 Nacio = ((Psicologo) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getNacionalidad();
-                 esp = ((Psicologo) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getEspecialidad();
+                esp = ((Psicologo) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getEspecialidad();
                 tit = ((Psicologo) modeloLISTA.get(JL_Psicologo1.getSelectedIndex())).getTitulo();
                 int centinela = -1;
                 for (int i = 0; i < raiz.getChildCount(); i++) {
@@ -1586,7 +1568,7 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
                             = new DefaultMutableTreeNode("Psicologo");//para poner la raiz del tipo de Integrante
                     DefaultMutableTreeNode p
                             = new DefaultMutableTreeNode(
-                                    new  Psicologo(tit, id, esp, Nombre, Apellido, Nacio, Edad));
+                                    new Psicologo(tit, id, esp, Nombre, Apellido, Nacio, Edad));
                     n.add(p);
                     raiz.add(n);
                 }//fin del if
@@ -1598,12 +1580,12 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
             }//fin del else
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error Inesperado");
-            e.printStackTrace();
+
         }//fin del try n catch
     }//GEN-LAST:event_JB_AgregarPsicoArbolMouseClicked
 
     private void JMI_ModificarTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_ModificarTreeActionPerformed
-       if (nodo_seleccionado.getUserObject() instanceof Jugadores) {
+        if (nodo_seleccionado.getUserObject() instanceof Jugadores) {
             Jugadores jug_seleccionado = (Jugadores) nodo_seleccionado.getUserObject();
             DefaultTreeModel m = (DefaultTreeModel) JTree_Equipo.getModel();
             jug_seleccionado.setNombre(JOptionPane.showInputDialog("Nombre del Jugador"));
@@ -1624,28 +1606,28 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
             entre_seleccionado.setCantidad_c(Integer.parseInt(JOptionPane.showInputDialog("Cantidad de Copas")));
             m.reload();
         } else if (nodo_seleccionado.getUserObject() instanceof Preparador) {
-           Preparador prep_seleccionado = (Preparador) nodo_seleccionado.getUserObject();
+            Preparador prep_seleccionado = (Preparador) nodo_seleccionado.getUserObject();
             DefaultTreeModel m = (DefaultTreeModel) JTree_Equipo.getModel();
-           prep_seleccionado.setNombre(JOptionPane.showInputDialog("Nombre del Preparador"));
-           prep_seleccionado.setApellido(JOptionPane.showInputDialog("Apellido del Preparador"));
-           prep_seleccionado.setEdad(Integer.parseInt(JOptionPane.showInputDialog("Edad del Preparador")));
-           prep_seleccionado.setNacionalidad(JOptionPane.showInputDialog("Nacionalidad del Preparador"));
-           prep_seleccionado.setContrato(Integer.parseInt(JOptionPane.showInputDialog("Años de Contrato del Preparador")));
-           prep_seleccionado.setEspecialidad(JOptionPane.showInputDialog("Especialidad del Preparador"));
-           prep_seleccionado.setID(JOptionPane.showInputDialog("ID del Preparador"));
-           prep_seleccionado.setTitulo(JOptionPane.showInputDialog("Titulo del Preparador"));
+            prep_seleccionado.setNombre(JOptionPane.showInputDialog("Nombre del Preparador"));
+            prep_seleccionado.setApellido(JOptionPane.showInputDialog("Apellido del Preparador"));
+            prep_seleccionado.setEdad(Integer.parseInt(JOptionPane.showInputDialog("Edad del Preparador")));
+            prep_seleccionado.setNacionalidad(JOptionPane.showInputDialog("Nacionalidad del Preparador"));
+            prep_seleccionado.setContrato(Integer.parseInt(JOptionPane.showInputDialog("Años de Contrato del Preparador")));
+            prep_seleccionado.setEspecialidad(JOptionPane.showInputDialog("Especialidad del Preparador"));
+            prep_seleccionado.setID(JOptionPane.showInputDialog("ID del Preparador"));
+            prep_seleccionado.setTitulo(JOptionPane.showInputDialog("Titulo del Preparador"));
             m.reload();
         } else if (nodo_seleccionado.getUserObject() instanceof Psicologo) {
-            Preparador psico_seleccionado = (Preparador) nodo_seleccionado.getUserObject();
+            Psicologo psico_seleccionado = (Psicologo) nodo_seleccionado.getUserObject();
             DefaultTreeModel m = (DefaultTreeModel) JTree_Equipo.getModel();
-           psico_seleccionado.setNombre(JOptionPane.showInputDialog("Nombre del Psicologo"));
-           psico_seleccionado.setApellido(JOptionPane.showInputDialog("Apellido del Psicologo"));
-           psico_seleccionado.setEdad(Integer.parseInt(JOptionPane.showInputDialog("Edad del Psicologo")));
-           psico_seleccionado.setNacionalidad(JOptionPane.showInputDialog("Nacionalidad del Psicologo"));
-           psico_seleccionado.setEspecialidad(JOptionPane.showInputDialog("Especialidad del Psicologo"));
-           psico_seleccionado.setID(JOptionPane.showInputDialog("ID del Psicologo"));
-           psico_seleccionado.setTitulo(JOptionPane.showInputDialog("Titulo del Psicologo"));
-            m.reload();          
+            psico_seleccionado.setNombre(JOptionPane.showInputDialog("Nombre del Psicologo"));
+            psico_seleccionado.setApellido(JOptionPane.showInputDialog("Apellido del Psicologo"));
+            psico_seleccionado.setEdad(Integer.parseInt(JOptionPane.showInputDialog("Edad del Psicologo")));
+            psico_seleccionado.setNacionalidad(JOptionPane.showInputDialog("Nacionalidad del Psicologo"));
+            psico_seleccionado.setEspecialidad(JOptionPane.showInputDialog("Especialidad del Psicologo"));
+            psico_seleccionado.setID(JOptionPane.showInputDialog("ID del Psicologo"));
+            psico_seleccionado.setTitulo(JOptionPane.showInputDialog("Titulo del Psicologo"));
+            m.reload();
         }//fin de la condiciones
         JOptionPane.showMessageDialog(this, "Modficado Correctamente");
     }//GEN-LAST:event_JMI_ModificarTreeActionPerformed
@@ -1859,8 +1841,6 @@ public class Lab5P2_VictorCruz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;

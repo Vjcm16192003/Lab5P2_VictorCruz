@@ -735,14 +735,14 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ingrese  nombre del Preparador:"/>
+                <Property name="text" type="java.lang.String" value="Ingrese  nombre del Psicologo:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTF_NombrePsico">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel29">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ingrese  apellido del Preparador:"/>
+                <Property name="text" type="java.lang.String" value="Ingrese  apellido del Psicologo:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTF_ApellidoPsico">
@@ -1637,21 +1637,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMI_ArbolActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Info partidos"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ver Partidos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
